@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this script connects to usr raspberry pi
+
+ssh pi@192.168.137.34
