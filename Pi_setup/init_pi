@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This will start up the initial pi sequence
+PI_IP='192.168.137.254'
+
+ssh pi@$PI_IP 'mkdir Scripts'
+./transfer_file Setup_Emacs.sh $PI_IP pi ~/.ssh/holberton
+./transfer_file make_script_cmd.sh $PI_IP pi ~/.ssh/holberton
+./transfer_file nginx_conf.sh $PI_IP pi ~/.ssh/holberton
+./transfer_file set_aliases.sh $PI_IP pi ~/.ssh/holberton
+ssh pi@PI_IP 'mv *.sh Scripts/'
+
