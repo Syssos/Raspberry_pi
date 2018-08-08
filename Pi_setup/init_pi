@@ -5,7 +5,7 @@ PI_IP='192.168.137.254'
 ssh pi@$PI_IP 'mkdir Scripts'
 ./transfer_file Send/Setup_Emacs.sh $PI_IP pi ~/.ssh/holberton
 ./transfer_file Send/make_script_cmd.sh $PI_IP pi ~/.ssh/holberton
-./transfer_file Send/nginx_conf.sh $PI_IP pi ~/.ssh/holberton
+./transfer_file Send/setup_nginx.sh $PI_IP pi ~/.ssh/holberton
 ./transfer_file Send/setup_aliases.sh $PI_IP pi ~/.ssh/holberton
 ./transfer_file Send/setup_GPIO.sh $PI_IP pi ~/.ssh/holberton
 ssh pi@$PI_IP 'mv *.sh Scripts/'
