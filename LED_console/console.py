@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import cmd
-from Colors import colors
+from models.Colors import colors
 from time import sleep
 from gpiozero import LED
 
@@ -17,6 +17,7 @@ class LEDcontrol(cmd.Cmd):
     def do_EOF(self, args):
         ''' Exits after receiving the EOF signal.
         '''
+        print ("Goodbye")
         return True
 
     def emptyline(self):
