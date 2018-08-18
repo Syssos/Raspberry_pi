@@ -24,11 +24,6 @@ class LEDcontrol(cmd.Cmd):
         '''
         pass
 
-    def handler(self, signum, frame):
-        # self.emptyline() does not work here
-        # return cmd.Cmd.emptyline(self) does not work here
-        print ("caught ctrl+c, press return to continue")
-
     def do_select(self, args):
        self.__light = colors.getcolor(self, args)
 
