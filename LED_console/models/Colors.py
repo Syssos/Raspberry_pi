@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-from gpiozero import LED
+from gpiozero import *
 from time import sleep
 from signal import pause
+from urllib.request import urlopen, URLError
 
 
 class colors():
@@ -9,11 +10,20 @@ class colors():
     """
     def getcolor(self, arg):
         if (arg == "yellow"):
-            return LED(12)
+            try:
+                return LED(12)
+            except exc.GPIOPinInUse as error:
+                print("in use")
         elif (arg == "blue"):
-            return LED(11)
+            try:
+                return LED(11)
+            except exc.GPIOPinInUse as error:
+                print("in use")
         elif (arg == "white"):
-            return LED(17)
+            try:
+                return LED(17)
+            except exc.GPIOPinInUse as error:
+                print("in use")
         else:
             print ("please enter a valid color")
 
@@ -30,3 +40,14 @@ class colors():
         else:
             print ("Please enter on or off")
 
+    def internet_on():
+        try:
+            urlopen('http://216.58.192.142', timeout=1)
+            return True
+        except URLError as err:
+            return False
+
+    def execstop(self):
+        self.off()
+        print("LED stopped")
+        
