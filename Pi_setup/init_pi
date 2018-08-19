@@ -8,5 +8,6 @@ ssh pi@$PI_IP 'mkdir Scripts'
 ./transfer_file Send/setup_nginx.sh $PI_IP pi ~/.ssh/holberton
 ./transfer_file Send/setup_aliases.sh $PI_IP pi ~/.ssh/holberton
 ./transfer_file Send/setup_GPIO.sh $PI_IP pi ~/.ssh/holberton
+./transfer_file Send/create_gitcom.sh $PI_IP pi ~/.ssh/holberton
 ssh pi@$PI_IP 'mv *.sh Scripts/'
 
